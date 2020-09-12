@@ -55,6 +55,28 @@ public class LinkedList<T> {
         return size;
     }
 
+    public void deleteValue(T value) {
+        if(head == null) {
+            return;
+        }
+
+        if(head.data == value) {
+            head = head.next;
+            return;
+        }
+
+        Node<T> current = head;
+        while(current.next != null) {
+            if(current.next.data == value)
+            {
+                current.next = current.next.next;
+                size--;
+                return;
+            }
+            current = current.next;
+        }
+    }
+
     private static class Node<T> {
         T data;
         Node<T> next;

@@ -59,4 +59,17 @@ class LinkedListTest {
         assertThrows(IllegalStateException.class,
                 ()-> list.getFirst());
     }
+
+    @Test
+    public void DeleteVale() {
+        list.addBack(1);
+        list.addBack(2);
+        list.addBack(3);
+        list.deleteValue(2);
+
+        assertEquals(2, list.size());
+        assertEquals(1, list.getFirst());
+        assertEquals(3, list.getLast());
+    }
+
 }
