@@ -58,8 +58,7 @@ class StackTest {
     @Test
     void peek() {
         Stack<String> names = new Stack<>();
-        assertThrows(IllegalStateException.class,
-                () -> names.peek());
+        assertThrows(IllegalStateException.class, names::peek);
 
         names.push("test");
         assertEquals("test", names.pop());
