@@ -42,4 +42,26 @@ class StackTest {
         numbers.push(5);
         assertEquals(5, numbers.pop());
     }
+
+    @Test
+    void empty() {
+        Stack<String> names = new Stack<>();
+        assertTrue(names.isEmpty());
+
+        names.push("test");
+        assertFalse(names.isEmpty());
+
+        names.pop();
+        assertTrue(names.isEmpty());
+    }
+
+    @Test
+    void peek() {
+        Stack<String> names = new Stack<>();
+        assertThrows(IllegalStateException.class,
+                () -> names.peek());
+
+        names.push("test");
+        assertEquals("test", names.pop());
+    }
 }

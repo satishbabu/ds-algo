@@ -1,6 +1,15 @@
 public class Stack<T> {
     private Node<T> head;
 
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    public T peek() {
+        if(head == null) throw new IllegalStateException("Empty Stack!!");
+        return head.data;
+    }
+
     public void push(T data) {
         Node<T> node = new Node<>(data);
         node.next = head;
