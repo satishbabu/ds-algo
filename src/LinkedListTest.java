@@ -61,7 +61,7 @@ class LinkedListTest {
     }
 
     @Test
-    public void DeleteVale() {
+    public void deleteVale() {
         list.addBack(1);
         list.addBack(2);
         list.addBack(3);
